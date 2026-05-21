@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wisdom portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#0f172a;
+      color:#fff;
+      line-height:1.7;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* HEADER */
+
+    header{
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:1000;
+      background:#0f172aee;
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 0;
+    }
+
+    .logo{
+      font-size:1.7rem;
+      font-weight:700;
+      color:white;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+
+    .nav-links a{
+      transition:.3s;
+    }
+
+    .nav-links a:hover{
+      color:#38bdf8;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding-top:100px;
+    }
+
+    .hero-content{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      align-items:center;
+      gap:60px;
+    }
+
+    .hero-text h1{
+      font-size:4rem;
+      line-height:1.2;
+      margin-bottom:20px;
+    }
+
+    .hero-text h1 span{
+      color:#38bdf8;
+    }
+
+    .hero-text p{
+      color:#cbd5e1;
+      margin-bottom:30px;
+      max-width:600px;
+    }
+
+    .btn-group{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border-radius:8px;
+      font-weight:600;
+      transition:.3s;
+      display:inline-block;
+    }
+
+    .primary-btn{
+      background:#38bdf8;
+      color:white;
+    }
+
+    .primary-btn:hover{
+      background:#0ea5e9;
+    }
+
+    .secondary-btn{
+      border:1px solid #38bdf8;
+      color:#38bdf8;
+    }
+
+    .secondary-btn:hover{
+      background:#38bdf8;
+      color:#0f172a;
+    }
+
+    .hero-image img{
+      border-radius:20px;
+      box-shadow:0 10px 40px rgba(56,189,248,0.3);
+    }
+
+    /* SECTION */
+
+    section{
+      padding:100px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:2.5rem;
+      color:white;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#cbd5e1;
+    }
+
+    /* ABOUT */
+
+    .about-content{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:30px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,0.08);
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 10px 30px rgba(56,189,248,0.15);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#38bdf8;
+    }
+
+    /* SKILLS */
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    /* SERVICES */
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .portfolio-item{
+      overflow:hidden;
+    }
+
+    .portfolio-item img{
+      border-radius:12px;
+      margin-bottom:20px;
+    }
+
+    /* STATS */
+
+    .stats{
+      margin-top:50px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;
+    }
+
+    .stat-box{
+      background:#1e293b;
+      padding:30px;
+      border-radius:14px;
+      text-align:center;
+    }
+
+    .stat-box h3{
+      font-size:2.2rem;
+      color:#38bdf8;
+    }
+   
+   
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:30px 0;
+      border-top:1px solid rgba(255,255,255,0.08);
+      color:#cbd5e1;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .hero-text h1{
+        font-size:2.8rem;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Wisdom</div>
+
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="hero-text">
+          <h1>
+            Web Developer &
+            <span>Digital Marketer</span>
+          </h1>
+
+          <p>
+            I build high-performing websites and data-driven marketing
+            campaigns that help brands grow online, generate leads,
+            and increase sales.
+          </p>
+
+          <div class="btn-group">
+            <a href="#portfolio" class="btn primary-btn">
+              View Portfolio
+            </a>
+
+            <a href="#contact" class="btn secondary-btn">
+              Hire Me
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="wisdom2.png">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>About Me</h2>
+        <p>Professional full stack web developer and a digital marketer focused on business growth and building web application to solve task.</p>
+      </div>
+
+      <div class="about-content">
+
+        <div class="card">
+          <h3>Who I Am</h3>
+          <p>
+            I'm a modern web developer and digital marketing specialist
+            with experience creating responsive websites, SEO strategies,
+            social media campaigns, and conversion-focused landing pages.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>My Mission</h3>
+          <p>
+            My mission is to help businesses establish a strong online
+            presence through clean design, scalable development,
+            and effective digital marketing solutions.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="stats">
+
+        <div class="stat-box">
+          <h3>20+</h3>
+          <p>Projects</p>
+        </div>
+
+        <div class="stat-box">
+          <h3>5+</h3>
+          <p>Years Experience</p>
+        </div>
+
+        <div class="stat-box">
+          <h3>30+</h3>
+          <p>Happy Clients</p>
+        </div>
+
+        <div class="stat-box">
+          <h3>98%</h3>
+          <p>Client Satisfaction</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Skills</h2>
+        <p>Technical expertise and marketing experience.</p>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="card">
+          <h3>Frontend Development</h3>
+          <p>
+            HTML, CSS, JavaScript, React, Tailwind CSS,
+            Responsive Design.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Backend Development</h3>
+          <p>
+            Node.js, Express, PHP, APIs, Database Management.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>SEO Optimization</h3>
+          <p>
+            Technical SEO, Google Analytics,
+            Keyword Research, Search Console.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Digital Advertising</h3>
+          <p>
+            Facebook Ads, Google Ads,
+            Lead Generation & Campaign Optimization.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="services">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Services</h2>
+        <p>Helping businesses grow online.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="card">
+          <h3>Website Development</h3>
+          <p>
+            Modern responsive websites built for speed,
+            performance, and conversions.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>E-Commerce Solutions</h3>
+          <p>
+            Professional online stores with secure payments
+            and optimized checkout systems.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>SEO Services</h3>
+          <p>
+            Improve rankings, visibility,
+            and organic traffic with strategic SEO.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Social Media Marketing</h3>
+          <p>
+            Engaging campaigns designed to increase
+            visibility, engagement, and sales.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+
+  <section id="portfolio">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Portfolio</h2>
+        <p>Selected projects and successful campaigns.</p>
+      </div>
+
+      <div class="portfolio-grid">
+
+        <div class="card portfolio-item">
+          <a href="https://wiztechhub.github.io/parkerson/"><img src="parkerson.jpg"></a>
+
+          <h3>Music Studio</h3>
+
+          <p>
+            Responsive Music Studio. upload of recents sonngs. <br>visit site: <a href="https://wiztechhub.github.io/parkerson/">Wiztech Hub</a></p>
+          </p>
+         
+        </div>
+
+        <div class="card portfolio-item">
+          <img src="ecommerce.jpg">
+
+          <h3>E-Commerce Store</h3>
+
+          <p>
+            High-converting online store with payment integration
+            and optimized product pages.
+          </p>
+        </div>
+
+        <div class="card portfolio-item">
+          <img src="advcal.jpg">
+
+          <h3>Advanced Calculator</h3>
+
+          <p>
+            Advanced Calculator.<br>Language: Python<br>
+            install: Python
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- portfolio-->
+   <div class="portfolio-grid">
+
+        <div class="card portfolio-item">
+          <a href="https://wiztechhub.github.io/lifechurch/"><img src="lifechurch.jpg"></a>
+
+          <h3>Church Website</h3>
+
+          <p>Modern Church Website<br>website: <a href="https://wiztechhub.github.io/lifechurch/">Life Church</a></p>
+          </p>
+         
+        </div>
+
+        <div class="card portfolio-item">
+          <a href="https://wiztechhub.github.io/incipientforthsch/"><img src="ifs2.jpg"></a>
+
+          <h3>Incipientforth School</h3>
+
+          <p>
+            Incipientforth School<br>website: <a href="https://incipientforth.netlify.app">incipientforth school</a>
+          </p>
+        </div>
+
+        <div class="card portfolio-item">
+          <img src="social-media.jpg">
+
+          <h3>Marketing Campaign</h3>
+
+          <p>
+            i have helped so many businesses run ads, that boost sales, increased leads,
+            conversions, and brand awareness.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Contact Me</h2>
+        <p>+234 9064424172<br><a href="https://www.gmail.com>wiztechhub92@gmail.com">wiztechhub92@gmail.com</a></p>
+      </div>
+
+     
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+      <p>
+        © 2026 Wisdom Isaiah | Web Developer & Digital Marketer
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
